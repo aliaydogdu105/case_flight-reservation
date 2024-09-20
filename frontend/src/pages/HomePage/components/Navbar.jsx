@@ -5,7 +5,7 @@ import NavLinks from "../../../components/NavLinks";
 
 const Navbar = () => {
   return (
-    <div className=" flex justify-between items-center bg-yellow-200 py-5">
+    <div className=" flex justify-between items-center bg-yellow-200 py-7">
       <Logo />
       <div className=" flex justify-center items-center gap-5">
         <NavLinks />
