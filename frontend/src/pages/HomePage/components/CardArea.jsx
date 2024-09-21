@@ -27,16 +27,18 @@ const CardArea = () => {
       {cards.map((card) => (
         <div
           key={card.title}
-          className="w-[300px] h-[295px] rounded-3xl flex items-center justify-center text-white relative"
+          className="group w-[300px] h-[295px] rounded-3xl flex items-center justify-center text-white relative"
           style={{
             backgroundImage: `url(${card.bgImage})`,
-            backgroundSize: "cover", 
-            backgroundPosition: "center", 
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className=" left-5 rounded-xl absolute bottom-5">
-            <h2 className="text-2xl font-semibold uppercase">{card.title}</h2>
+          <div className="left-5 rounded-xl absolute bottom-5">
+            <h2 className="text-2xl font-semibold uppercase group-hover:bg-black group-hover:bg-opacity-40 group-hover:p-1 rounded-lg transition-colors duration-150">
+              {card.title}
+            </h2>
           </div>
         </div>
       ))}
