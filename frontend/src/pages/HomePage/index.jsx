@@ -2,13 +2,17 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import InputArea from "./components/InputArea";
 import CardArea from "./components/CardArea";
+import FlightsPart from "./components/FlightsPart";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className=" flex gap-10">
-        <InputArea />
+      <div className=" flex gap-9">
+        <div className=" bg-gray-500 flex flex-col w-full gap-9">
+          <InputArea />
+          <FlightsPart />
+        </div>
         <CardArea />
       </div>
     </div>

@@ -77,9 +77,7 @@ const LandindAndTime = ({ flightType }) => {
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
             className={`py-[7px] px-14 border rounded-l-full ${
-              flightType === "oneWay"
-                && "rounded-r-full"
-                
+              flightType === "oneWay" && "rounded-r-full"
             }`}
           />
         </div>

@@ -18,16 +18,16 @@ const CardArea = () => {
       title: "travel packages",
       logo: "asdf",
       bgImage:
-        "https://www.compensa.lt/uploads/_CGSmartImage/keliones-draudimas_900x900_04_9399-554a93d460e38cedc3c3909e358c0856.webp",
+        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS9NfO1DWIsK4VLnc_ib-wjU2-lYVr1v8TuvFa2qeZZ8oCqjgYy",
     },
   ];
 
   return (
-    <div className="flex flex-col h-fit gap-10">
+    <div className="flex flex-col justify-center items-end bg-yellow-500 flex-1 gap-10">
       {cards.map((card) => (
         <div
           key={card.title}
-          className="group w-[300px] h-[295px] rounded-3xl flex items-center justify-center text-white relative"
+          className="group w-[310px] h-[295px] rounded-2xl flex text-white relative"
           style={{
             backgroundImage: `url(${card.bgImage})`,
             backgroundSize: "cover",
