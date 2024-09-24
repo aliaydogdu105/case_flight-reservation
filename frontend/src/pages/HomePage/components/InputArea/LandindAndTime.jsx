@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaPlaneArrival, FaPlaneDeparture } from "react-icons/fa";
+import { IoMdCalendar } from "react-icons/io";
 
 const LandindAndTime = ({ flightType }) => {
   const [departure, setDeparture] = useState("");
@@ -16,70 +18,82 @@ const LandindAndTime = ({ flightType }) => {
   ];
 
   return (
-    <div className="flex flex-col gap-7 mt-7 bg-blue-100">
-      <div className=" flex bg-pink-200">
+    <div className="flex flex-col gap-7 mt-7">
+      <div className=" flex">
         <div className=" flex w-1/2">
           {/* Kalkış Noktası */}
-          <>
+          <div className=" relative">
             <select
               id="departure"
               value={departure}
               onChange={(e) => setDeparture(e.target.value)}
-              className="py-[7px] px-8 border rounded-l-full"
+              className="py-[7px] px-14 border border-gray-400 rounded-l-full bg-[#EDEDED] appearance-none"
             >
-              <option value="" disabled>
-                Select departure airport
-              </option>
+              <option value="" disabled></option>
               {airports.map((airport) => (
                 <option key={airport.code} value={airport.code}>
                   {airport.name}
                 </option>
               ))}
             </select>
-          </>
+            <div className="absolute inset-y-0 left-2 flex items-center px-2 pointer-events-none">
+              <FaPlaneDeparture size={20} color="#4A234A"/>
+            </div>
+          </div>
 
           {/* Varış Noktası */}
-          <>
+          <div className=" relative">
             <select
               id="arrival"
               value={arrival}
               onChange={(e) => setArrival(e.target.value)}
-              className="py-[7px] px-8 ml-2 border rounded-r-full"
+              className="py-[7px] px-12 ml-2 border border-gray-400 rounded-r-full bg-[#EDEDED] appearance-none"
             >
-              <option value="" disabled>
-                Select arrival airport
-              </option>
+              <option value="" disabled></option>
               {airports.map((airport) => (
                 <option key={airport.code} value={airport.code}>
                   {airport.name}
                 </option>
               ))}
             </select>
-          </>
+            <div className="absolute inset-y-0 left-2 flex items-center px-2 pointer-events-none">
+              <FaPlaneArrival size={20} color="#4A234A"/>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-row-reverse w-1/2">
           {/* Eğer Round Trip seçildiyse Dönüş Tarihi Göster */}
           {flightType === "roundTrip" && (
-            <input
-              type="date"
-              id="returnDate"
-              value={returnDate}
-              onChange={(e) => setReturnDate(e.target.value)}
-              className="py-[7px] px-14 ml-2 border rounded-r-full"
-            />
+            <div className=" relative group">
+              <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden bg-[#EDEDED] border-t border-b border-gray-400 w-3/4">
+                <IoMdCalendar size={25} color="#4A234A" />
+              </div>
+              <input
+                type="date"
+                id="returnDate"
+                value={returnDate}
+                onChange={(e) => setReturnDate(e.target.value)}
+                className="py-[7px] px-16 ml-2 border border-gray-400 rounded-r-full date-input text-transparent bg-[#EDEDED] focus:text-black"
+              />
+            </div>
           )}
 
           {/* Gidiş Tarihi */}
-          <input
-            type="date"
-            id="departureDate"
-            value={departureDate}
-            onChange={(e) => setDepartureDate(e.target.value)}
-            className={`py-[7px] px-14 border rounded-l-full ${
-              flightType === "oneWay" && "rounded-r-full"
-            }`}
-          />
+          <div className=" relative group">
+            <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden bg-[#EDEDED] border-t border-b border-gray-400 w-3/4">
+              <IoMdCalendar size={25} color="#4A234A"/>
+            </div>
+            <input
+              type="date"
+              id="departureDate"
+              value={departureDate}
+              onChange={(e) => setDepartureDate(e.target.value)}
+              className={`py-[7px] px-16 border border-gray-400 rounded-l-full text-transparent bg-[#EDEDED] focus:text-black ${
+                flightType === "oneWay" && "rounded-r-full"
+              }`}
+            />
+          </div>
         </div>
       </div>
 
