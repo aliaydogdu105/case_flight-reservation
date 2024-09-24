@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const FlightsSort = () => {
   const [sortOrder, setSortOrder] = useState("");
   const [arrivalTime, setArrivalTime] = useState("");
+  const [stops, setStops] = useState("");
 
   const handleChangePrice = (event) => {
     setSortOrder(event.target.value);
@@ -12,8 +13,12 @@ const FlightsSort = () => {
     setArrivalTime(event.target.value);
   };
 
+  const handleChangeStops = (event) => {
+    setStops(event.target.value);
+  };
+
   return (
-    <div className="bg-blue-800 flex flex-col flex-1 pl-9 py-3">
+    <div className="flex flex-col flex-1 pl-9 py-3">
       {/* sort by */}
       <div className=" flex flex-col text-base">
         <label htmlFor="price" className="mb-4 text-lg font-semibold">
@@ -67,20 +72,20 @@ const FlightsSort = () => {
             <input
               className="mr-2"
               type="radio"
-              value="5:00 AM - 11:59 AM"
-              checked={arrivalTime === "5:00 AM - 11:59 AM"}
-              onChange={handleChangeArrival}
+              value="Nonstop / 230$"
+              checked={stops === "Nonstop / 230$"}
+              onChange={handleChangeStops}
             />
             Nonstop / 230$
           </label>
           <br />
           <label>
             <input
-              className="mr-2"
+              className="mr-2 my-3"
               type="radio"
-              value="12:00 PM - 5:59 PM"
-              checked={arrivalTime === "12:00 PM - 5:59 PM"}
-              onChange={handleChangeArrival}
+              value="1 Stop / 230"
+              checked={stops === "1 Stop / 230"}
+              onChange={handleChangeStops}
             />
             1 Stop / 230
           </label>
@@ -89,9 +94,9 @@ const FlightsSort = () => {
             <input
               className="mr-2"
               type="radio"
-              value="12:00 PM - 5:59 PM"
-              checked={arrivalTime === "12:00 PM - 5:59 PM"}
-              onChange={handleChangeArrival}
+              value="2+ Stops / 230$"
+              checked={stops === "2+ Stops / 230$"}
+              onChange={handleChangeStops}
             />
             2+ Stops / 230$
           </label>

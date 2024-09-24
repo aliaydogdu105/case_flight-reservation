@@ -4,7 +4,7 @@ import FlightsSort from "./FlightsSort";
 
 const FlightsPart = () => {
   return (
-    <div className=" flex bg-purple-500">
+    <div className=" flex">
       <FlightsCard />
       <FlightsSort />
     </div>
