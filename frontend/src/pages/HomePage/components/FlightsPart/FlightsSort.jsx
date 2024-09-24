@@ -43,7 +43,7 @@ const FlightsSort = () => {
         <div>
           <label>
             <input
-              className="mr-2"
+              className="mr-2 mb-4"
               type="radio"
               value="5:00 AM - 11:59 AM"
               checked={arrivalTime === "5:00 AM - 11:59 AM"}
@@ -81,7 +81,7 @@ const FlightsSort = () => {
           <br />
           <label>
             <input
-              className="mr-2 my-3"
+              className="mr-2 my-4"
               type="radio"
               value="1 Stop / 230"
               checked={stops === "1 Stop / 230"}

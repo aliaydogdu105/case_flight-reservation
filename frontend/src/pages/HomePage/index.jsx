@@ -9,7 +9,7 @@ const HomePage = () => {
     <div className="min-h-screen">
       <Navbar />
       <div className=" flex gap-9">
-        <div className=" bg-gray-500 flex flex-col w-full gap-9">
+        <div className=" flex flex-col w-full gap-9">
           <InputArea />
           <FlightsPart />
         </div>
