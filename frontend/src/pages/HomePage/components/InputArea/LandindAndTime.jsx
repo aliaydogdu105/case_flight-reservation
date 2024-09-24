@@ -84,7 +84,7 @@ const LandindAndTime = ({ flightType }) => {
         <div className="flex flex-row-reverse w-1/2">
           {flightType === "roundTrip" && (
             <div className="relative group">
-              <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden bg-[#EDEDED] border-t border-b border-gray-400 w-3/4">
+              <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden">
                 <IoMdCalendar size={25} color="#4A234A" />
               </div>
               <input
@@ -92,13 +92,13 @@ const LandindAndTime = ({ flightType }) => {
                 id="returnDate"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
-                className="py-[7px] px-16 ml-2 border border-gray-400 rounded-r-full date-input text-transparent bg-[#EDEDED] focus:text-black"
+                className="py-[7px] px-16 ml-2 border border-gray-400 rounded-r-full date-input bg-[#EDEDED] text-black"
               />
             </div>
           )}
 
           <div className="relative group">
-            <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden bg-[#EDEDED] border-t border-b border-gray-400 w-3/4">
+            <div className="absolute inset-y-0 left-2 flex items-center mx-2 pointer-events-none group-focus-within:hidden">
               <IoMdCalendar size={25} color="#4A234A" />
             </div>
             <input
@@ -106,7 +106,7 @@ const LandindAndTime = ({ flightType }) => {
               id="departureDate"
               value={departureDate}
               onChange={(e) => setDepartureDate(e.target.value)}
-              className={`py-[7px] px-16 border border-gray-400 rounded-l-full text-transparent bg-[#EDEDED] focus:text-black ${
+              className={`py-[7px] px-16 border border-gray-400 rounded-l-full bg-[#EDEDED] text-black ${
                 flightType === "oneWay" && "rounded-r-full"
               }`}
             />
@@ -126,6 +126,8 @@ const LandindAndTime = ({ flightType }) => {
       >
         Show flights
       </button>
+
+      
     </div>
   );
 };
