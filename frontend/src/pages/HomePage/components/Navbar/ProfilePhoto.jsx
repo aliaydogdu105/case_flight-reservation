@@ -6,9 +6,9 @@ const ProfilePhoto = () => {
       <img
         src="https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg"
         alt="profile photo"
-        className=" w-12 h-12 rounded-full"
+        className=" w-11 h-11 rounded-full"
       />
-      <div>Joane Smith</div>
+      <div className=" text-lg">Joane Smith</div>
     </div>
   );
 };

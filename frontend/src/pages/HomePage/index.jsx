@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import InputArea from "./components/InputArea";
-import CardArea from "./components/CardArea";
+import CardArea from "./components/CardArea/CardArea";
 import FlightsPart from "./components/FlightsPart";
 
 const HomePage = () => {
